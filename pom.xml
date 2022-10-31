@@ -39,11 +39,12 @@
 						<environment>Sandbox</environment>
 						<workers>1</workers>
 						<workerType>Micro</workerType>
-						<objectStoreV2>true</objectStoreV2>	
+						<objectStoreV2>true</objectStoreV2>
 						<properties>
 							<key>Value</key>
-						</properties>						
+						</properties>
 					</cloudHubDeployment>
+					<classifier>mule-application</classifier>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -81,7 +82,7 @@
 
 	<pluginRepositories>
 		<pluginRepository>
-			<id>mule-public</id>			
+			<id>mule-public</id>
 			<url>https://repository.mulesoft.org/nexus/content/repositories/releases</url>
 		</pluginRepository>
 	</pluginRepositories>
