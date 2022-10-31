@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="8b8c0eef-93ee-4fe1-98b2-6301de9f1e92" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="ci-cd-jenkFlow" doc:id="1e951b1a-508c-4eba-9bd6-d421e3d94d81" >
+		<http:listener doc:name="Listener" doc:id="3337b4f1-035e-407a-88c0-411fc3972bf5" config-ref="HTTP_Listener_config" path="/ci-cd"/>
+		<logger level="INFO" doc:name="Logger" doc:id="fd3aa1ce-af96-4182-9f63-06a7751f1f3c" message="request received"/>
+		<set-payload value='"Success"' doc:name="Set Payload" doc:id="b1baa1a3-fb52-4d90-ad0a-2b348fbde305" />
+	</flow>
+</mule>
